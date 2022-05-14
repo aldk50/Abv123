@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Abv123.Views.NumbersPage"
+             xmlns:vm="clr-namespace:Abv123.ViewModels"
+            SizeChanged="ContentPage_SizeChanged"
+             Title="Числа">
+    <ContentPage.BindingContext>
+        <vm:NumberPageViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid  x:Name="mainGrid">
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                    <Label x:Name="abcLbl" Text="{Binding GoAbcText}" TextColor="WhiteSmoke" HorizontalOptions="Start" Margin="10,0,0,0"  FontAttributes="Bold" FontSize="10"/>
+                    <Label x:Name="numLbl" Text="Числа" TextColor="WhiteSmoke" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                </StackLayout>
+                <ScrollView VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" LayoutChanged="ContentPage_SizeChanged">
+                    <FlexLayout x:Name="num" Wrap="Wrap"  VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand"/>
+                </ScrollView>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
